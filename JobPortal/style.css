@@ -1,0 +1,29 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    padding:0px;
+}
+
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .job-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  body {
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 600px;
+  }
+  

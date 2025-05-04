@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Seeker Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h2 class="mb-4">Job Seeker Dashboard</h2>
+    
+    <h4>Applied Jobs</h4>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="job-card">
+          <h5>Frontend Developer</h5>
+          <p>Status: <span class="badge bg-info">Under Review</span></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="job-card">
+          <h5>Backend Developer</h5>
+          <p>Status: <span class="badge bg-warning text-dark">Pending</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="appliedJobs" class="row g-3"></div>
+<script>
+  const appliedJobs = JSON.parse(localStorage.getItem("appliedJobs") || "[]");
+  const container = document.getElementById("appliedJobs");
+  appliedJobs.forEach(job => {
+    const card = document.createElement("div");
+    card.className = "col-md-4";
+    card.innerHTML = `
+      <div class="job-card">
+        <h5>${job.title}</h5>
+        <p>Status: <span class="badge bg-warning text-dark">${job.status}</span></p>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
